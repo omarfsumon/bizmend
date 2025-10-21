@@ -4,11 +4,9 @@
     $author_image = get_field('author_profile', 'user_' . $author_id);
     $fallback_image = get_template_directory_uri() . '/src/img/user_placeholder.webp';
 ?>
-<section class="bg-white py-12">
-        <div class="flex flex-col items-center justify-center py-8">
+<section class="bg-white py-10 md:py-20">
+        <div class="flex flex-col items-center justify-center">
         <h1 class="text-3xl font-bold mb-4">Business Globalizer Blog</h1>
-        <p class="text-gray-600">Browse through our collection of posts.</p>
-
         <!-- Search Form -->
         <div class="flex-1 max-w-xl mx-auto px-4 w-full py-3">
             <?php get_search_form(); ?>

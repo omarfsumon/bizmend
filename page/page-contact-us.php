@@ -4,7 +4,7 @@
         <h2 class="text-2nd-heading text-center font-bold mb-4 text-primary-800">Contact Bizmend</h2>
         <h6 class="text-center block text-1xl">We'd Love to Hear From You!</h6>
         <p class="text-center p-4">At Bizmend, we are committed to helping businesses connect, grow, and succeed.<br>
-Our team is ready to assist you with questions about our business listing services, blog content, partnerships, or anything else.</p>
+            Our team is ready to assist you with questions about our business listing services, blog content, partnerships, or anything else.</p>
     </div>
 </section>
 <section class="py-16">

@@ -146,7 +146,7 @@
 <section class="bg-gray-50 py-8">
     <!-- Related Posts -->
     <div class="container my-12">
-        <h2 class="text-xl font-bold mb-4">Related Post</h2>
+        <h2 class="text-3rd-heading font-normal mb-4">Related Post</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <?php
             $categories = wp_get_post_categories(get_the_ID());

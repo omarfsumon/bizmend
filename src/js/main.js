@@ -1,53 +1,6 @@
-document.addEventListener("DOMContentLoaded", function() {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function(e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute("href")).scrollIntoView({
-                behavior: "smooth"
-            });
-        });
-    });
-});
-
+//smooth scroll single post
+document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault(),document.querySelector(this.getAttribute("href")).scrollIntoView({behavior:"smooth"})})})});
 //tab
-document.addEventListener('DOMContentLoaded', () => {
-  const tabs = document.querySelectorAll('[role="tab"]');
-  const tabPanels = document.querySelectorAll('[role="tabpanel"]');
-
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      const targetId = tab.getAttribute('aria-controls');
-      const targetPanel = document.getElementById(targetId);
-
-      tabs.forEach(t => {
-        t.classList.remove('active_tab');
-        t.setAttribute('aria-selected', 'false');
-      });
-
-      tabPanels.forEach(panel => {
-        panel.classList.add('hidden', 'opacity-0');
-      });
-      tab.classList.add('active_tab');
-      tab.setAttribute('aria-selected', 'true');
-
-      targetPanel.classList.remove('hidden');
-      setTimeout(() => {
-        targetPanel.classList.remove('opacity-0');
-      }, 50);
-    });
-  });
-});
-
+document.addEventListener("DOMContentLoaded",()=>{let e=document.querySelectorAll('[role="tab"]'),t=document.querySelectorAll('[role="tabpanel"]');e.forEach(a=>{a.addEventListener("click",()=>{let s=a.getAttribute("aria-controls"),l=document.getElementById(s);e.forEach(e=>{e.classList.remove("active_tab"),e.setAttribute("aria-selected","false")}),t.forEach(e=>{e.classList.add("hidden","opacity-0")}),a.classList.add("active_tab"),a.setAttribute("aria-selected","true"),l.classList.remove("hidden"),setTimeout(()=>{l.classList.remove("opacity-0")},50)})})});
 //faq
-document.addEventListener("DOMContentLoaded", () => {
-const faqs = document.querySelectorAll(".faq-item");
-faqs.forEach(faq => {
-    faq.addEventListener("toggle", () => {
-    if (faq.open) {
-        faqs.forEach(item => {
-        if (item !== faq) item.removeAttribute("open");
-        });
-    }
-    });
-});
-});
+document.addEventListener("DOMContentLoaded",()=>{let e=document.querySelectorAll(".faq-item");e.forEach(t=>{t.addEventListener("toggle",()=>{t.open&&e.forEach(e=>{e!==t&&e.removeAttribute("open")})})})});

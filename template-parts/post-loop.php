@@ -20,7 +20,7 @@
         </div>
     <?php endif; ?>
         <div class="flex items-center gap-2 text-sm text-gray-500">
-            <img width="20" height="20" src="<?php echo esc_url($author_image['url'] ?? $fallback_image); ?>" class="w-5 h-5 rounded-full object-cover" alt="<?php echo esc_attr(get_the_author()); ?>" decoding="async" loading="lazy">
+            <img fetchpriority="high" width="20" height="20" src="<?php echo esc_url($author_image['url'] ?? $fallback_image); ?>" class="w-5 h-5 rounded-full object-cover" alt="<?php echo esc_attr(get_the_author()); ?>" decoding="async" loading="lazy">
             <span>by <a href="<?php echo esc_url(get_author_posts_url($author_id)); ?>" class="text-gray-700 hover:underline"><?php echo esc_attr(get_the_author()); ?></a></span>
         </div>
 </article>
