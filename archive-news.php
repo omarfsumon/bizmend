@@ -1,0 +1,32 @@
+<?php get_header(); ?>
+<?php
+    $author_id = get_the_author_meta('ID');
+    $author_image = get_field('author_profile', 'user_' . $author_id);
+    $fallback_image = get_template_directory_uri() . '/src/img/user_placeholder.webp';
+?>
+<section class="bg-white py-12">
+        <div class="flex flex-col items-center justify-center py-8">
+        <h1 class="text-3xl font-bold mb-4">Business Globalizer Blog</h1>
+        <p class="text-gray-600">Browse through our collection of posts.</p>
+
+        <!-- Search Form -->
+        <div class="flex-1 max-w-xl mx-auto px-4 w-full py-3">
+            <?php get_search_form(); ?>
+        </div>
+    </div>
+</section>
+<section id="index" class="container py-12">
+
+    <!-- post archive -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+            <?php get_template_part('template-parts/post-loop'); ?>
+        <?php endwhile; else : ?>
+            <p class="text-gray-500">No posts found.</p>
+        <?php endif; wp_reset_postdata(); ?>
+
+        <!-- Pagination -->
+        <?php globalizer_pagination(); ?>
+    </div>
+</section>
+<?php get_footer(); ?>
