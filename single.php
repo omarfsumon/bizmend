@@ -83,6 +83,13 @@
 
         <!-- Right Sidebar (25%) -->
         <aside class="lg:col-span-3 space-y-6">
+            <!-- Author Box -->
+            <div class="p-4 border rounded-lg bg-white text-center">
+                <img width="50" height="50" src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($author_name); ?>" class="w-32 h-32 inline-flex rounded-full object-cover transition-transform duration-200 group-hover:scale-105" decoding="async" loading="lazy">
+                <h4 class="text-xl font-bold py-2"><?php echo esc_html($author_name); ?></h4>
+                <p class="author_bio"><?php the_author_description(); ?></p>
+                <a class="bg-primary-50 text-primary-900 border border-primary-600 text-xs leading-normal py-2 px-3 hover:bg-primary-700 hover:text-primary-50 rounded inline-flex mt-3" href="<?php echo esc_url($author_url); ?>">All Articles</a>
+            </div>
             <!-- Search -->
             <div class="p-4 border rounded-lg bg-white">
                 <?php get_search_form(); ?>

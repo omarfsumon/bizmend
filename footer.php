@@ -2,27 +2,7 @@
         <div class="container mx-auto w-full">
             <div class="flex flex-col items-center mx-auto w-full gap-8 py-12">
                 <div class="site_logo">
-                    <?php
-                    if ( has_custom_logo() ) {
-                        the_custom_logo();
-                    } elseif ( is_front_page() && is_home() ) {
-                        ?>
-                        <h1 class="site-title">
-                            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-                                <?php bloginfo( 'name' ); ?>
-                            </a>
-                        </h1>
-                        <?php
-                    } else {
-                        ?>
-                        <p class="site-title">
-                            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-                                <?php bloginfo( 'name' ); ?>
-                            </a>
-                        </p>
-                        <?php
-                    }
-                    ?>
+                    <?php get_template_part('template-parts/logo')?>
                     <p class="site-description"><?php bloginfo( 'description' ); ?></p>
                 </div>
                 <div class="footer_menu">

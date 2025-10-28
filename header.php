@@ -9,36 +9,17 @@
 <header id="header" class="sticky_header shadow z-50 bg-white sticky top-0">
   <div class="container flex items-center justify-between p-5">
     <div class="site_logo">
-        <?php
-        if ( has_custom_logo() ) {
-            the_custom_logo();
-        } elseif ( is_front_page() && is_home() ) {
-            ?>
-            <h1 class="site-title">
-                <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-                    <?php bloginfo( 'name' ); ?>
-                </a>
-            </h1>
-            <?php
-        } else {
-            ?>
-            <p class="site-title">
-                <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-                    <?php bloginfo( 'name' ); ?>
-                </a>
-            </p>
-            <?php
-        }
-        ?>
+       <?php get_template_part('template-parts/logo')?>
     </div>
-
     <!-- Mobile Menu Toggle -->
     <button id="mobile-menu-toggle" class="lg:hidden p-2" aria-label="Toggle Menu">
         <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
         </svg>
     </button>
-
+    <div class="max-w-lg w-full hidden lg:block">
+        <?php get_search_form(); ?>
+    </div>
     <!-- Desktop Navigation -->
     <div class="flex items-center gap-5 hidden lg:flex">
         <nav id="desktop-navigation" class="main-navigation">
@@ -54,9 +35,8 @@
             ) );
             ?>
         </nav>
-        <a class="py-2 px-6 bg-orange-500 text-white rounded" href="/write-for-us/">Write For Us</a>
+        <a class="py-2 px-6 bg-orange-500 text-white rounded text-nowrap" href="/write-for-us/">Write For Us</a>
     </div>
-
     <!-- Mobile Navigation -->
     <div id="mobile-menu" class="fixed top-0 right-0 w-[300px] h-full bg-white shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out z-50 lg:hidden">
         <div class="px-4 py-5 border-b flex justify-between items-center">
@@ -67,7 +47,6 @@
             </button>
             <a class="py-2 px-6 bg-orange-500 text-white rounded" href="/write-for-us/">Write For Us</a>
         </div>
-
         <nav id="mobile-navigation" class="p-4">
             <?php
                 wp_nav_menu( array(
