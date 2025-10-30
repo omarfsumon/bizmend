@@ -22,14 +22,6 @@ function bizmend_dequeue_block_styles() {
     wp_dequeue_style('global-styles');
     wp_deregister_style('global-styles');
     
-    // Remove jQuery if not needed
-    wp_dequeue_script('jquery');
-    wp_dequeue_script('jquery-core');
-    wp_dequeue_script('jquery-migrate');
-
-    wp_deregister_script('jquery');
-    wp_deregister_script('jquery-core');
-    wp_deregister_script('jquery-migrate');
 }
 add_action('wp_print_styles', 'bizmend_dequeue_block_styles', 100);
 
