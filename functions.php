@@ -36,13 +36,12 @@ add_action( 'after_setup_theme', 'globalizer_theme_support' );
 
 //Load include file
 require_once get_template_directory() . '/inc/enqueue.php';
-//require_once get_template_directory() . '/inc/menu-fields.php';
-//require_once get_template_directory() . '/inc/class-walker.php';
 require_once get_template_directory() . '/inc/toc.php';
 require_once get_template_directory() . '/inc/login-page.php';
 require_once get_template_directory() . '/inc/post-views.php';
 require_once get_template_directory() . '/template-parts/components/pagination.php';
 require_once get_template_directory() . '/template-parts/components/breadcrumb.php';
+require_once get_template_directory() . '/inc/custom-code.php';
 
 // Modify search query to only show posts
 function globalizer_modify_search_query($query) {

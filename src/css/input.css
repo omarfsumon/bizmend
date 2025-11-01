@@ -132,7 +132,7 @@
     }
 
     table {
-        @apply w-full border-collapse my-6 bg-white;
+        @apply w-full border-collapse my-6 bg-white block overflow-x-scroll;
     }
 
     th,
