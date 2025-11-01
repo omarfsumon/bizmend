@@ -25,10 +25,20 @@
                         
                         $default_image_url = get_template_directory_uri() . '/src/img/user_placeholder.webp';
                         $image_url = $author_image ? $author_image['url'] : $default_image_url;
+
+                        //ads banner code can be placed here
+                        $side_banner = get_field('side_banner');
+                        $side_url = get_field('side_url');
+                        $bottom_banner = get_field('bottom_banner');
+                        $bottom_url = get_field('bottom_url');
+
+                        $placeholder_side   = get_template_directory_uri() . '/src/img/side_placeholder.webp';
+                        $placeholder_bottom = get_template_directory_uri() . '/src/img/bottom_placeholder.webp';
                     ?>
                     
                     <a href="<?php echo esc_url($author_url); ?>" class="flex items-center gap-2 group">
-                        <img width="20" height="20" src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($author_name); ?>" class="w-5 h-5 rounded-full object-cover transition-transform duration-200 group-hover:scale-105" decoding="async" loading="lazy">
+                        <img width="20" height="20" src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($author_name); ?>" 
+                        class="w-5 h-5 rounded-full object-cover transition-transform duration-200 group-hover:scale-105" decoding="async" loading="lazy">
                         <span><?php echo esc_html($author_name); ?></span>
                     </a>
 
@@ -79,6 +89,15 @@
                     <div><?php next_post_link('%link', 'Next →'); ?></div>
                 </div>
             <?php endwhile; endif; ?>
+                <!-- Bottom Banner Ad -->
+                <div class="bottom-banner mt-6">
+                    <a href="<?php echo esc_url($bottom_url ?: '#'); ?>" target="_blank" rel="dofollow">
+                        <img width="632" height="auto"
+                            src="<?php echo esc_url($bottom_banner ? $bottom_banner['url'] : $placeholder_bottom); ?>" 
+                            alt="<?php echo esc_attr($bottom_banner['alt'] ?? 'Bottom Banner'); ?>" 
+                            class="w-full h-auto rounded shadow-md" decoding="async" loading="lazy">
+                    </a>
+                </div>
         </main>
 
         <!-- Right Sidebar (25%) -->
@@ -146,6 +165,15 @@
                     endif;
                     ?>
                 </ul>
+            </div>
+            <!-- Side Banner -->
+            <div class="side-banner mb-6 sticky top-24">
+                <a href="<?php echo esc_url($side_url ?: '#'); ?>" target="_blank" rel="dofollow">
+                    <img width="300" height="auto"
+                        src="<?php echo esc_url($side_banner ? $side_banner['url'] : $placeholder_side); ?>" 
+                        alt="<?php echo esc_attr($side_banner['alt'] ?? 'Side Banner'); ?>" 
+                        class="w-full h-auto rounded-lg shadow-md" decoding="async" loading="lazy">
+                </a>
             </div>
         </aside>
     </div>
